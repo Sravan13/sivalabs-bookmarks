@@ -44,6 +44,36 @@
       "url": "https://www.baeldung.com/jackson-deserialize-immutable-objects",
       "tags": ["json"],
       "created_date": "2020-02-15"
+    },
+    {
+      "title": "Spring Boot Security Jwt Authentication",
+      "url": "https://www.devglan.com/spring-security/spring-boot-jwt-auth",
+      "tags": ["spring-boot"],
+      "created_date": "2020-02-15"
+    },
+    {
+      "title": "Flyway and jOOQ for Unbeatable SQL Development Productivity",
+      "url": "https://blog.jooq.org/2014/06/25/flyway-and-jooq-for-unbeatable-sql-development-productivity/",
+      "tags": ["flyway", "jooq"],
+      "created_date": "2020-02-15"
+    },
+    {
+      "title": "Spring MVC @Requestparam - Binding request parameters",
+      "url": "https://reversecoding.net/spring-mvc-requestparam-binding-request-parameters/",
+      "tags": ["spring-mvc"],
+      "created_date": "2020-02-15"
+    },
+    {
+      "title": "Fixing Slow Spring Boot Startup",
+      "url": "https://blog.noizwaves.io/2017/09/02/slow-spring-boot-startup.html",
+      "tags": ["spring-boot"],
+      "created_date": "2020-03-17"
+    },
+    {
+      "title": "Achieving framework-independent zen with the power of interfaces and hexagonal architecture",
+      "url": "https://rskupnik.github.io/framework-independence-with-hexagonal-architecture",
+      "tags": ["architecture"],
+      "created_date": "2020-03-15"
     }
   ]
 }

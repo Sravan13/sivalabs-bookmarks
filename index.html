@@ -6,15 +6,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootswatch/cosmo/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <title>SivaLabs - Bookmarks</title>
   </head>
   <body>
+  <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">SivaLabs - Bookmarks</a>
+      <a class="navbar-brand" href="#" v-on:click="showHome()">SivaLabs - Bookmarks</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -31,7 +30,7 @@
         <ul class="navbar-nav mr-auto"></ul>
       </div>
     </nav>
-    <div id="app" class="container-fluid">
+    <div id="main" class="container-fluid">
       <div class="row">
         <div class="col-md-9">
           <div>
@@ -57,10 +56,27 @@
             </div>
           </div>
           <div>
+            <nav aria-label="Page navigation" v-if="visibleBookmarks.total_pages > 1">
+              <ul class="pagination pagination justify-content-center">
+                <li class="page-item " v-bind:class="{ disabled: visibleBookmarks.page === 1 }">
+                  <a class="page-link" href="#" v-on:click="setPageNumber(1)">First</a>
+                </li>
+                <li class="page-item" v-bind:class="{ disabled: !visibleBookmarks.pre_page }">
+                  <a class="page-link" href="#" v-on:click="setPageNumber(visibleBookmarks.pre_page)">Previous</a>
+                </li>
+                <li class="page-item" v-bind:class="{ disabled: !visibleBookmarks.next_page }">
+                  <a class="page-link" href="#" v-on:click="setPageNumber(visibleBookmarks.next_page)">Next</a>
+                </li>
+                <li class="page-item" v-bind:class="{ disabled: visibleBookmarks.page === visibleBookmarks.total_pages }">
+                  <a class="page-link" href="#" v-on:click="setPageNumber(visibleBookmarks.total_pages)">Last</a>
+                </li>
+              </ul>
+            </nav>
+
             <div
               class="alert alert-primary"
               role="alert"
-              v-for="bookmark in visibleBookmarks"
+              v-for="bookmark in visibleBookmarks.data"
             >
               <h3 class="alert-heading">
                 <a v-bind:href="bookmark.url" target="_blank"
@@ -69,7 +85,8 @@
               </h3>
               <p class="mb-0">
                 <span v-for="tag in bookmark.tags" style="font-size: 20px">
-                  <a href="#" class="badge badge-primary">{{tag}}</a>&nbsp;
+                  <a href="#" class="badge badge-primary"
+                     v-on:click="showByTag(tag)">{{tag}}</a>&nbsp;
                 </span>
               </p>
             </div>
@@ -77,7 +94,6 @@
         </div>
         <div class="col-md-3">
           <h3><strong>Tags</strong></h3>
-
           <div class="list-group list-group-flush">
             <a
               href="#"
@@ -96,13 +112,12 @@
         <p class="text-center">SivaLabs &copy; 2020</p>
       </div>
     </footer>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="assets/js/utils.js"></script>
     <script src="assets/js/app.js"></script>
   </body>
 </html>
