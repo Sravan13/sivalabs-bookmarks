@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootswatch/cosmo/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>SivaLabs - Bookmarks</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">SivaLabs - Bookmarks</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto"></ul>
+      </div>
+    </nav>
+    <div id="app" class="container-fluid">
+      <div class="row">
+        <div class="col-md-9">
+          <div>
+            <form
+              class="form-inline pb-3"
+              method="get"
+              v-on:submit.prevent="search"
+            >
+              <div class="form-group  col-md-9">
+                <input
+                  class="col-md-12 form-control"
+                  type="search"
+                  id="searchKey"
+                  name="query"
+                />
+              </div>
+              <button class="btn btn-primary btn" type="submit">Search</button>
+            </form>
+          </div>
+          <div>
+            <div>
+              <strong style="font-size: 25px;">{{message}}</strong>
+            </div>
+          </div>
+          <div>
+            <div
+              class="alert alert-primary"
+              role="alert"
+              v-for="bookmark in visibleBookmarks"
+            >
+              <h3 class="alert-heading">
+                <a v-bind:href="bookmark.url" target="_blank"
+                  ><strong>{{bookmark.title}}</strong></a
+                >
+              </h3>
+              <p class="mb-0">
+                <span v-for="tag in bookmark.tags" style="font-size: 20px">
+                  <a href="#" class="badge badge-primary">{{tag}}</a>&nbsp;
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h3><strong>Tags</strong></h3>
+
+          <div class="list-group list-group-flush">
+            <a
+              href="#"
+              class="list-group-item list-group-item-action"
+              v-for="tag in allTags"
+            >
+              <i class="fas fa-tag"></i>
+              <span v-on:click="showByTag(tag)">{{tag}}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-center">SivaLabs &copy; 2020</p>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

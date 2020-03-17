@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "author": "Siva"
+  },
+  "data": [
+    {
+      "title": "How To Remove Docker Containers, Images, Volumes, and Networks",
+      "url": "https://linuxize.com/post/how-to-remove-docker-images-containers-volumes-and-networks/",
+      "tags": ["docker"],
+      "created_date": "2020-01-10"
+    },
+    {
+      "title": "All You Need To Know About Unit Testing with Spring Boot",
+      "url": "https://reflectoring.io/unit-testing-spring-boot/",
+      "tags": ["spring-boot", "junit"],
+      "created_date": "2020-01-10"
+    },
+    {
+      "title": "Running Tests and Building React applications with Gradle Build Tool",
+      "url": "https://shekhargulati.com/2019/01/13/running-tests-and-building-react-applications-with-gradle-build-tool/",
+      "tags": ["gradle"],
+      "created_date": "2020-01-13"
+    },
+    {
+      "title": "How to teach Git",
+      "url": "https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html",
+      "tags": ["git"],
+      "created_date": "2020-01-13"
+    },
+    {
+      "title": "SpringBoot Integration Testing using TestContainers Starter",
+      "url": "https://sivalabs.in/2020/02/spring-boot-integration-testing-using-testcontainers-starter/",
+      "tags": ["spring-boot", "testcontainers"],
+      "created_date": "2020-02-10"
+    },
+    {
+      "title": "Java Microservices: A Practical Guide",
+      "url": "https://www.marcobehler.com/guides/java-microservices-a-practical-guide",
+      "tags": ["microservices"],
+      "created_date": "2020-02-11"
+    },
+    {
+      "title": "Deserialize Immutable Objects with Jackson",
+      "url": "https://www.baeldung.com/jackson-deserialize-immutable-objects",
+      "tags": ["json"],
+      "created_date": "2020-02-15"
+    }
+  ]
+}
